@@ -1,0 +1,30 @@
+<!-- src/app/components/home/home.component.html -->
+<div class="navbar">
+  <div class="navbar-brand">
+    <h1>Eventia</h1>
+  </div>
+  <div class="navbar-content">
+    <p>Welcome!</p>
+    <!-- Logout Button -->
+    <!-- Only show the booking history button to normal users in the navbar -->
+    <button *ngIf="userRole === 'user'" [routerLink]="['/booking-history']" class="view-history-button">View Booking History</button>
+    <button class="logout-button" (click)="logout()">Logout</button>
+  </div>
+</div>
+
+<div class="home-container">
+  <h2 class="home-title">Available Events</h2>
+  <div *ngFor="let event of events" class="event-card">
+    <h3 class="event-title">{{ event.title }}</h3>
+    <p class="event-date">{{ event.date | date: 'mediumDate' }}</p>
+
+    <div *ngIf="event._id">
+      <button class="view-details-button" [routerLink]="['/event', event._id]">View Details</button>
+    </div>
+  </div>
+
+  <!-- Organizer-specific button to manage events -->
+  <div *ngIf="userRole === 'organizer'" class="organizer-actions">
+    <button class="manage-events-button" [routerLink]="['/organizer-events']">Manage My Events</button>
+  </div>
+</div>

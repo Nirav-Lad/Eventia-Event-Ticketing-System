@@ -1,0 +1,299 @@
+/* src/app/components/organizer-events/organizer-events.component.css */
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 15px;
+  background-color: #007bff;
+  color: white;
+  font-family: Arial, sans-serif;
+  align-self: flex-start;
+}
+
+.navbar-brand {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  align-self: flex-start;
+}
+
+/* Organizer Events */
+.organizer-events {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+.organizer-title {
+  text-align: center;
+  font-size: 1.8em;
+  color: #4A4A4A;
+  margin-bottom: 30px;
+}
+
+.event-card {
+  border: none; /* Remove solid border */
+  padding: 20px; /* Increased padding */
+  margin-bottom: 20px;
+  border-radius: 10px; /* Increased border radius */
+  background-color: #f8f9fa; /* Light background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-title {
+  font-size: 1.5em; /* Larger font size */
+  font-weight: bold; /* Bold font weight */
+  color: #0056b3; /* Darker blue for contrast */
+  margin-bottom: 10px; /* Space below title */
+}
+
+.event-date {
+  font-size: 1.1em; /* Slightly larger font size */
+  color: #555;
+  margin: 10px 0;
+}
+
+/* Styling for edit and delete event buttons */
+
+/* Base styles */
+.edit-event-button, .delete-event-button {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+  margin: 8px;
+}
+
+/* Edit Button */
+.edit-event-button {
+  background-color: #ffc107; /* Yellow background */
+  box-shadow: 0 4px 8px rgba(255, 193, 7, 0.3);
+}
+
+.edit-event-button:hover {
+  background-color: #e0a800;
+  box-shadow: 0 6px 12px rgba(255, 193, 7, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Delete Button */
+.delete-event-button {
+  background-color: #ff4d4d; /* Red background */
+  box-shadow: 0 4px 8px rgba(255, 77, 77, 0.3);
+}
+
+.delete-event-button:hover {
+  background-color: #ff1a1a;
+  box-shadow: 0 6px 12px rgba(255, 77, 77, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Icon margin for both buttons */
+.edit-event-button i, .delete-event-button i {
+  margin-right: 8px;
+  font-size: 18px; /* Slightly larger icon */
+}
+
+/* Additional styles for button containers */
+.event-card .event-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 15px;
+}
+.view-details-button {
+  background-color: #007bff; /* Blue for view details */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-details-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.create-event-button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px solid black;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #101301; /* Blue for create */
+  color: white;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.create-event-button:hover {
+  background-color: #b3b000;
+  transform: scale(1.05);
+}
+
+
+.qr-code-preview {
+width: 100px;
+height: 100px;
+margin-top: 10px; /* Add some space above the preview */
+margin-bottom: 13px;
+border: 1px solid #ccc; /* Add a border for better*/
+}
+
+/* create evet css */
+.event-creation-container {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    height: 36%;
+  }
+  
+  .form-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    display: flex;
+  }
+  
+  .event-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-label {
+    margin-bottom: 8px;
+    color: #555;
+  }
+  
+  .form-input,
+  .form-textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+  
+  .form-textarea {
+    resize: vertical;
+    height: 100px;
+  }
+  
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .submit-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-button:hover {
+    background-color: #218838;
+  }
+  
+  .cancel-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .cancel-button:hover {
+    background-color: #c82333;
+  }
+
+
+
+/* Modal overlay to blur background */
+/* Modal overlay to blur background */
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow-y: auto; /* Allows scrolling if content is taller than viewport */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius:8px 8px 8px 8px ;
+  max-width: 600px;
+  width: 90%; /* Makes modal responsive to smaller screens */
+  max-height: 80vh; /* Limits height to 80% of the viewport */
+  overflow-y: auto; /* Adds scroll if content exceeds modal height */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease; /* Optional fade-in animation */
+}
+
+/* Close Button Styling */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.5em;
+  color: #333;
+  cursor: pointer;
+}
+
+/* home.component.css */
+.logout-button {
+  background-color: #ff6b6b; /* A bright red color */
+  color: #ffffff; /* White text */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  align-self: flex-end;
+}
+
+.logout-button:hover {
+  background-color: #ff5252; /* Slightly darker red on hover */
+  box-shadow: 0 4px 8px rgba(255, 107, 107, 0.2);
+}
+
+.logout-button:active {
+  background-color: #ff4040; /* Even darker red on click */
+  box-shadow: none;
+}
+
+

@@ -1,0 +1,112 @@
+/* src/app/components/event-details/event-details.component.css */
+
+.event-details {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    animation: fadeIn 0.5s ease-in;
+    position: relative;
+}
+
+.back-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+
+.event-title {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    color: #4A4A4A;
+    margin-bottom: 20px;
+}
+
+.event-date, .event-description, .event-location, .event-price {
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.qr-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.event-qr-code {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.ticket-label {
+    font-size: 16px;
+    color: #333;
+    margin-right: 10px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.ticket-input {
+    width: 100px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.total-amount {
+    font-size: 18px;
+    color: #4A4A4A;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.book-button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #28a745;
+    color: white;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 20px;
+}
+
+.book-button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

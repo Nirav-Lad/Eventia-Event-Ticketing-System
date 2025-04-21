@@ -1,0 +1,169 @@
+/* src/app/components/home/home.component.css */
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff;
+    padding: 10px 20px;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.navbar-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-content p {
+    margin: 0;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.view-history-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #28a745; /* Green button */
+    color: white;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.view-history-button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Main Container */
+.home-container {
+    max-width: 800px;
+    margin: 70px auto 50px; /* Adjusted margin to account for navbar */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.home-title {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    color: #4A4A4A;
+    margin-bottom: 30px;
+}
+
+/* Event Card Styles */
+.event-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: slideIn 0.5s ease-in;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.event-title {
+    font-size: 20px;
+    color: #007bff;
+    margin: 0;
+}
+
+.event-date {
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.view-details-button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.view-details-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Organizer Button */
+.manage-events-button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ffc107;
+    color: white;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.manage-events-button:hover {
+    background-color: #e0a800;
+    transform: scale(1.05);
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* home.component.css */
+.logout-button {
+    background-color: #ff6b6b; /* A bright red color */
+    color: #ffffff; /* White text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    align-self: flex-end;
+  }
+  
+  .logout-button:hover {
+    background-color: #ff5252; /* Slightly darker red on hover */
+    box-shadow: 0 4px 8px rgba(255, 107, 107, 0.2);
+  }
+  
+  .logout-button:active {
+    background-color: #ff4040; /* Even darker red on click */
+    box-shadow: none;
+  }

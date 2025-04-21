@@ -1,0 +1,33 @@
+<!-- src/app/components/booking-history/booking-history.component.html -->
+<div class="booking-history">
+  <button class="back-button" [routerLink]="['/home']">← Back</button>
+  
+  <h2 class="booking-title">Your Booking History</h2>
+
+  <div *ngFor="let booking of bookings" class="booking-item">
+    <h3 class="event-title">
+      <span class="status-icon" [ngClass]="booking.deleted ? 'canceled-icon' : 'active-icon'"></span>
+      {{ booking.deleted ? 'Event Canceled by THE ORGANIZER' : booking.event?.title || 'Event title not available' }}
+    </h3>
+    
+    <p class="booking-info">
+      <span class="icon">📅</span> 
+      Event Date: {{ booking.deleted ? 'N/A' : (booking.event?.date | date: 'mediumDate') || 'Date not available' }}
+    </p>
+    
+    <p class="booking-info">
+      <span class="icon">🎟️</span> 
+      Tickets: {{ booking.tickets }}
+    </p>
+    
+    <p class="booking-info">
+      <span class="icon">💰</span> 
+      Total Price: ₹{{ booking.totalPrice || 'Not available' }}
+    </p>
+    
+    <p class="booking-info">
+      <span class="icon">📆</span> 
+      Booking Date: {{ booking.bookingDate | date: 'mediumDate' }}
+    </p>
+  </div>
+</div>

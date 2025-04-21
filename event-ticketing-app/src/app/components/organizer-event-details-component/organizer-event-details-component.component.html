@@ -1,0 +1,36 @@
+<div class="event-details-modal">
+  <div class="event-details-container">
+    <h3 class="event-title">Event Details</h3>
+
+    <div *ngIf="eventDetails" class="event-info">
+      <p><strong>Title:</strong> {{ eventDetails.title }}</p>
+      <p><strong>Description:</strong> {{ eventDetails.description }}</p>
+      <p><strong>Date:</strong> {{ eventDetails.date | date }}</p>
+      <p><strong>Location:</strong> {{ eventDetails.location }}</p>
+      <p><strong>Capacity:</strong> {{ eventDetails.capacity }}</p>
+      <p><strong>Tickets Sold:</strong> {{ totalTickets }}</p>
+      <p><strong>Ticket Price:</strong> {{ eventDetails.ticketPrice | currency: 'INR':'symbol-narrow':'1.0-0' }}</p>
+      <p><strong>Organizer:</strong> {{ eventDetails.organizer?.name }} ({{ eventDetails.organizer?.email }})</p>
+    </div>
+
+    <div *ngIf="!eventDetails" class="loading-text">
+      <p>Loading event details...</p>
+    </div>
+
+    <div *ngIf="bookings && bookings.length > 0" class="booking-section">
+      <h4>Bookings</h4>
+      <ul class="booking-list">
+        <li *ngFor="let booking of bookings">
+          <span class="user-info">User: {{ booking.user.name }} ({{ booking.user.email }})</span> 
+          <span class="ticket-info">Tickets: {{ booking.tickets }}</span>
+        </li>
+      </ul>
+    </div>
+
+    <div *ngIf="bookings && bookings.length === 0" class="no-bookings">
+      <p>No bookings yet for this event.</p>
+    </div>
+
+    <button class="close-button" (click)="closeModal()">Close</button>
+  </div>
+</div>

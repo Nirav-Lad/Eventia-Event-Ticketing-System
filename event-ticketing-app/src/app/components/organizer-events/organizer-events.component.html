@@ -1,0 +1,114 @@
+<!-- src/app/components/organizer-events/organizer-events.component.html -->
+
+<!-- Navbar with welcome message and Create Event button -->
+<nav class="navbar">
+  <div class="navbar-brand">Eventia</div>
+  <div class="navbar-content">
+    <p>Welcome!</p>
+    <button class="create-event-button" (click)="toggleCreateEventForm()">Create New Event</button>
+    <button class="logout-button" (click)="logout()">Logout</button>
+  </div>
+</nav>
+
+<div class="organizer-events">
+  <h2 class="organizer-title">Your Organized Events</h2>
+
+  <div *ngFor="let event of organizerEvents" class="event-card">
+    <h3 class="event-title">{{ event.title }}</h3>
+    <p class="event-date">Date: {{ event.date | date: 'mediumDate'}}</p>
+    <button class="edit-event-button" (click)="editEvent(event)">Edit Event</button>
+    <button class="delete-event-button" (click)="deleteEvent(event._id)">
+      <i class="fas fa-trash-alt"></i> Delete 
+    </button>
+    <button (click)="showEventDetails(event._id)" class="view-details-button">View Details</button> <!-- New button -->
+  </div>
+
+  <!-- Event creation form -->
+  <!-- Modal Overlay -->
+<div *ngIf="isCreateFormVisible" class="modal-overlay">
+  <div class="modal-content">
+    <button class="close-button" (click)="toggleCreateEventForm()">X</button>
+    <h3 class="form-title">Create New Event</h3>
+    <form (ngSubmit)="createEvent()" class="event-form">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" id="title" [(ngModel)]="newEventTitle" name="title" required class="form-input">
+
+      <label for="description" class="form-label">Description</label>
+      <textarea id="description" [(ngModel)]="newEventDescription" name="description" class="form-textarea"></textarea>
+
+      <label for="date" class="form-label">Date</label>
+      <input type="date" id="date" [(ngModel)]="newEventDate" name="date" required class="form-input">
+
+      <label for="location" class="form-label">Location</label>
+      <input type="text" id="location" [(ngModel)]="newEventLocation" name="location" class="form-input">
+
+      <label for="capacity" class="form-label">Capacity</label>
+      <input type="number" id="capacity" [(ngModel)]="newEventCapacity" name="capacity" required class="form-input">
+
+      <label for="ticketPrice" class="form-label">Ticket Price</label>
+      <input type="number" class="form-input" name="ticketPrice" [(ngModel)]="ticketPrice" placeholder="Enter ticket price">
+
+      <label for="qrCode" class="form-label">QR Code</label>
+      <input type="file" class="form-input" name="qrCode" (change)="onFileSelect($event)">
+      
+      <img *ngIf="qrCodePreview" [src]="qrCodePreview" alt="QR Code Preview" class="qr-code-preview">
+
+      <div class="form-buttons">
+        <button type="submit" class="submit-button">Create Event</button>
+        <button type="button" (click)="toggleCreateEventForm()" class="cancel-button">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Now the edit event details, is working propely, but it is using some default values and not able to get 
+ values in realtime from the user about that particular event, so i want to do like this -->
+
+  <!-- Event edit form -->
+  <div *ngIf="isEditFormVisible" class="event-edit-container modal-overlay">
+    <div class="modal-content">
+      <h3 class="form-title">Edit Event</h3>
+      <form (ngSubmit)="updateEvent()" class="event-form">
+        <label for="editTitle" class="form-label">Title</label>
+        <input type="text" id="editTitle" [(ngModel)]="selectedEvent.title" name="title" required class="form-input">
+  
+        <label for="editDescription" class="form-label">Description</label>
+        <textarea id="editDescription" [(ngModel)]="selectedEvent.description" name="description" class="form-textarea"></textarea>
+  
+        <label for="editDate" class="form-label">Date</label>
+        <input type="date" id="editDate" [(ngModel)]="selectedEvent.date" name="date" required class="form-input">
+  
+        <label for="editLocation" class="form-label">Location</label>
+        <input type="text" id="editLocation" [(ngModel)]="selectedEvent.location" name="location" class="form-input">
+  
+        <label for="editCapacity" class="form-label">Capacity</label>
+        <input type="number" id="editCapacity" [(ngModel)]="selectedEvent.capacity" name="capacity" required class="form-input">
+  
+        <label for="editTicketPrice" class="form-label">Ticket Price</label>
+        <input type="number" id="editTicketPrice" [(ngModel)]="selectedEvent.ticketPrice" name="ticketPrice" class="form-input">
+  
+        <label for="editQrCode" class="form-label">QR Code</label>
+        <input type="file" id="editQrCode" (change)="onFileSelect($event)" class="form-input">
+        <img *ngIf="qrCodePreview" [src]="qrCodePreview" alt="QR Code Preview" class="qr-code-preview">
+  
+        <div class="form-buttons">
+          <button type="submit" class="submit-button">Update Event</button>
+          <button type="button" (click)="cancelEdit()" class="cancel-button">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+<!-- Modal for Event Details -->
+<div *ngIf="selectedEventId" class="modal-overlay">
+  <div class="modal-content">
+    <app-organizer-event-details-component
+      [eventId]="selectedEventId"
+      (close)="closeModal()"> <!-- Close event listener -->
+    </app-organizer-event-details-component>
+    <button class="close-button" (click)="closeModal()">X</button>
+  </div>
+</div>
+
+<!-- we will see the qr code issue later on, -->
+</div>

@@ -1,0 +1,105 @@
+/* Modal Background */
+.event-details-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Container */
+.event-details-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 24px;
+  max-width: 600px;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* Title Styling */
+.event-title {
+  color: #333;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  border-bottom: 2px solid #f2f2f2;
+  padding-bottom: 10px;
+}
+
+/* Event Information Styling */
+.event-info p {
+  font-size: 1rem;
+  margin: 10px 0;
+  color: #555;
+}
+
+.event-info strong {
+  color: #222;
+}
+
+/* Booking Section Styling */
+.booking-section h4 {
+  font-size: 1.4rem;
+  margin-top: 20px;
+  color: #007bff;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.booking-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.booking-list li {
+  background-color: #f9f9f9;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  color: #555;
+}
+
+.user-info {
+  font-weight: bold;
+}
+
+/* Close Button Styling */
+.close-button {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.close-button:hover {
+  background-color: #0056b3;
+}
+
+/* Loading Text */
+.loading-text p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #888;
+}
+
+.no-bookings p {
+  text-align: center;
+  font-size: 1rem;
+  color: #999;
+}

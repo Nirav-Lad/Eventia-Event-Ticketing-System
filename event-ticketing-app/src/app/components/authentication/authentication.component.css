@@ -1,0 +1,226 @@
+/* Styling for the authentication container */
+h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #333;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+  margin-bottom: 10px;
+  animation: fadeInDown 0.7s ease-out;
+}
+
+h4 {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+  font-family: 'Arial', sans-serif;
+  margin-bottom: 30px;
+  animation: fadeInDown 1s ease-out;
+}
+
+.auth-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Welcome Header Styling */
+.auth-container h2:first-of-type {
+  text-align: center;
+  font-size: 28px;
+  font-family: 'Roboto', sans-serif;
+  color: #007bff;
+  font-weight: bold;
+  margin-bottom: 5px;
+  animation: fadeInDown 0.7s ease-out;
+}
+
+.auth-container h4 {
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  margin-bottom: 20px;
+  animation: fadeInDown 1s ease-out;
+}
+
+/* Main Header Styling */
+.auth-container h2 {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Input Field Styling */
+.auth-input {
+  width: calc(100% - 20px);
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Styling for the role selection */
+.role-selection {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+}
+
+.role-selection label {
+  margin-right: 15px;
+}
+
+.role-selection input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Primary Button Styling */
+.auth-button {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s, transform 0.3s;
+  font-weight: bold;
+}
+
+.auth-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Secondary Button Styling */
+.switch-button {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #ffc107;
+  color: white;
+  margin-top: 10px;
+  transition: background-color 0.3s, transform 0.3s;
+  font-weight: bold;
+}
+
+.switch-button:hover {
+  background-color: #e0a800;
+  transform: scale(1.05);
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Styling for Role Selection Toggle */
+.role-selection {
+  display: flex;
+  justify-content: space-around;
+  margin: 15px 0;
+  position: relative;
+}
+
+/* Slider Switch Container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ddd;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+/* Position the label text inside the slider */
+.role-label {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  font-weight: bold;
+  color: #0a0a0a;
+}
+
+.switch input:checked + .slider {
+  background-color: #007bff;
+  color: white;
+}
+
+.switch input:checked + .slider .role-label {
+  color: rgb(7, 7, 7);
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(100%);
+}
+
+

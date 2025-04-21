@@ -1,0 +1,33 @@
+<!-- src/app/components/event-details/event-details.component.html -->
+<div class="event-details">
+  <button class="back-button" [routerLink]="['/home']">← Back</button>
+  
+  <h2 class="event-title">{{ event.title }}</h2>
+  <p class="event-date">
+    <span class="icon">📅</span> Date: {{ event.date | date: 'mediumDate' }}
+  </p>
+  
+  <p class="event-description">
+    <span class="icon">📝</span> {{ event.description }}
+  </p>
+  
+  <p class="event-location">
+    <span class="icon">📍</span> Location: {{ event.location }}
+  </p>
+  
+  <p class="event-price">
+    <span class="icon">💰</span> Price per Ticket: {{ event.ticketPrice | currency:'INR':'symbol':'1.0-0' }}
+  </p>
+  
+  <div *ngIf="event.qrCodeImage" class="qr-container">
+    <img [src]="'http://localhost:5000' + event.qrCodeImage" alt="QR Code" class="event-qr-code" />
+  </div>
+  
+  <label for="ticketQuantity" class="ticket-label">Tickets:</label>
+  <input type="number" id="ticketQuantity" [(ngModel)]="tickets" (change)="calculateTotalAmount()" min="1" class="ticket-input" />
+
+  <!-- Display total amount before booking -->
+  <p class="total-amount">Total Amount: ₹{{ totalAmount }}</p>
+
+  <button (click)="bookTickets()" class="book-button">Book Tickets</button>
+</div>

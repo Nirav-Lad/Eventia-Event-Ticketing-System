@@ -1,0 +1,63 @@
+<!-- src/app/components/authentication/authentication.component.html -->
+<h2>Welcome to Eventia</h2>
+<h4>Ultimate platform for event organizers as well as event enthusiasts</h4>
+<div class="auth-container">
+    <h2>{{ isLoginMode ? 'Login' : 'Signup' }}</h2>
+    <form (ngSubmit)="onSubmit()" #authForm="ngForm">
+        <div *ngIf="!isLoginMode">
+            <input type="text" 
+                   placeholder="Full Name" 
+                   [(ngModel)]="user.name" 
+                   name="name" 
+                   required 
+                   class="auth-input" 
+                   #name="ngModel">
+            <!-- Error message for Full Name -->
+            <div *ngIf="name.invalid && name.touched" class="error-message">
+                Name is required.
+            </div>
+        </div>
+        
+        <input type="email" 
+               placeholder="Email" 
+               [(ngModel)]="user.email" 
+               name="email" 
+               required 
+               class="auth-input" 
+               #email="ngModel">
+        <!-- Error message for Email -->
+        <div *ngIf="email.invalid && email.touched" class="error-message">
+            A valid email is required.
+        </div>
+        
+        <input type="password" 
+               placeholder="Password" 
+               [(ngModel)]="user.password" 
+               name="password" 
+               required 
+               class="auth-input" 
+               #password="ngModel">
+        <!-- Error message for Password -->
+        <div *ngIf="password.invalid && password.touched" class="error-message">
+            Password is required.
+        </div>
+
+        <div *ngIf="!isLoginMode" class="role-selection">
+            <label class="switch">
+                <input type="radio" name="role" [(ngModel)]="user.role" value="user" checked> 
+                <span class="slider">
+                    <span class="role-label">User</span>
+                </span>
+            </label>
+            <label class="switch">
+                <input type="radio" name="role" [(ngModel)]="user.role" value="organizer"> 
+                <span class="slider">
+                    <span class="role-label">Organizer</span>
+                </span>
+            </label>
+        </div>
+        
+        <button type="submit" class="auth-button" [disabled]="authForm.invalid">{{ isLoginMode ? 'Login' : 'Signup' }}</button>
+        <button type="button" (click)="toggleMode()" class="switch-button">{{ isLoginMode ? 'Switch to Signup' : 'Switch to Login' }}</button>
+    </form>
+</div>
