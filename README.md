@@ -40,7 +40,7 @@ Manual event and ticket management often lead to inefficiencies for both organiz
 | Auth        | JWT (JSON Web Token)|
 | Styling     | Custome css         |
 
-## 🔧 Setup Instructions
+## 🔧Instructions
 
 ### 📦 Clone Repository
 
